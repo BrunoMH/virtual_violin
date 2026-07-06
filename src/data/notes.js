@@ -40,7 +40,10 @@ function diatonicIndex(letter, octave) {
  * @param {string} label - display label for the open string, e.g. 'Sol'
  * @param {number} positions - how many semitone positions up from open (frets)
  */
-function buildString(openLetter, openOctave, label, positions = 12) {
+
+const positions = 16;
+
+function buildString(openLetter, openOctave, label, positions) {
   let chromaIdx = CHROMATIC.indexOf(openLetter)
   let octave = openOctave
   const notes = []
@@ -72,10 +75,10 @@ function buildString(openLetter, openOctave, label, positions = 12) {
 
 // Standard violin tuning, low to high: G3, D4, A4, E5
 export const STRINGS = [
-  { key: 'G', label: 'Sol', notes: buildString('G', 3, 'Sol') },
-  { key: 'D', label: 'Re', notes: buildString('D', 4, 'Re') },
-  { key: 'A', label: 'La', notes: buildString('A', 4, 'La') },
-  { key: 'E', label: 'Mi', notes: buildString('E', 5, 'Mi') },
+  { key: 'G', label: 'Sol', notes: buildString('G', 3, 'Sol',  positions) },
+  { key: 'D', label: 'Re', notes: buildString('D', 4, 'Re',  positions) },
+  { key: 'A', label: 'La', notes: buildString('A', 4, 'La',  positions) },
+  { key: 'E', label: 'Mi', notes: buildString('E', 5, 'Mi',  positions) },
 ]
 
 export const POSITIONS_PER_STRING = STRINGS[0].notes.length

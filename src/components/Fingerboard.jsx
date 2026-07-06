@@ -3,7 +3,7 @@ import NoteButton from './NoteButton.jsx'
 
 const VIEW_W = 400
 const NUT_Y = 96
-const FINGERBOARD_END_Y = 610
+const FINGERBOARD_END_Y = 760
 const FIRST_ROW_Y = 128
 const CENTER_X = 200
 
@@ -30,7 +30,7 @@ function stringX(stringIndex, y) {
 export default function Fingerboard({ onSelectNote }) {
   const nutXs = STRINGS.map((_, i) => stringX(i, NUT_Y))
   const endXs = STRINGS.map((_, i) => stringX(i, FINGERBOARD_END_Y))
-  const tailXs = STRINGS.map((_, i) => stringX(i, FINGERBOARD_END_Y) )
+  const tailXs = STRINGS.map((_, i) => stringX(i, FINGERBOARD_END_Y))
 
   return (
     <svg viewBox={`0 0 ${VIEW_W} 920`} className="fingerboard-svg" role="group" aria-label="Diapasón de violín">
@@ -89,26 +89,26 @@ export default function Fingerboard({ onSelectNote }) {
 
       {/* Violin body (upper bout, visible behind the fingerboard end) */}
       <path
-        d={`M 60 700
-            C 60 640 110 605 200 605
-            C 290 605 340 640 340 700
-            C 340 760 320 790 270 810
-            C 320 840 340 875 340 905
-            L 320 918
-            C 300 880 270 858 200 858
-            C 130 858 100 880 80 918
-            L 60 905
-            C 60 875 80 840 130 810
-            C 80 790 60 760 60 700 Z`}
+        d={`M 60 850
+          C 60 790 110 755 200 755
+          C 290 755 340 790 340 850
+          C 340 910 320 940 270 960
+          C 320 990 340 1025 340 1055
+          L 320 1068
+          C 300 1030 270 1008 200 1008
+          C 130 1008 100 1030 80 1068
+          L 60 1055
+          C 60 1025 80 990 130 960
+          C 80 940 60 910 60 850 Z`}
         fill="url(#woodGradient)"
         stroke="#5A3316"
         strokeWidth="2"
       />
       <path
-        d={`M 60 700
-            C 60 640 110 605 200 605
-            C 290 605 340 640 340 700
-            C 340 760 320 790 270 810`}
+        d={`M 60 850
+          C 60 790 110 755 200 755
+          C 290 755 340 790 340 850
+          C 340 910 320 940 270 960`}
         fill="none" stroke="#3E2211" strokeWidth="1.5" opacity="0.5"
       />
 
@@ -117,7 +117,7 @@ export default function Fingerboard({ onSelectNote }) {
         <line
           key={s.key}
           x1={nutXs[i]} y1={NUT_Y}
-          x2={tailXs[i]} y2={840}
+          x2={tailXs[i]} y2={990}
           stroke={i === 0 || i === 1 ? '#D9D2C4' : '#EDE8DD'}
           strokeWidth={i === 0 ? 2.4 : i === 1 ? 2 : i === 2 ? 1.5 : 1.1}
         />
