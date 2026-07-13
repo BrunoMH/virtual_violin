@@ -3,7 +3,7 @@ import NoteButton from './NoteButton.jsx'
 
 const VIEW_W = 400
 const NUT_Y = 96
-const FINGERBOARD_END_Y = 760
+const FINGERBOARD_END_Y = 820
 const FIRST_ROW_Y = 128
 const CENTER_X = 200
 
