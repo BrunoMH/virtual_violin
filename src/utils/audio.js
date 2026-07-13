@@ -98,9 +98,9 @@ export function playNote(frequency, duration = 1.6, onProgress = () => {}) {
     master.gain.setValueAtTime(master.gain.value, t)
     master.gain.exponentialRampToValueAtTime(0.0001, t + 0.05)
     oscillators.forEach((osc) => {
-      try { osc.stop(t + 0.06) } catch (e) { /* already stopped */ }
+      try { osc.stop(t + 0.06) } catch { /* already stopped */ }
     })
-    try { vibrato.stop(t + 0.06) } catch (e) { /* already stopped */ }
+    try { vibrato.stop(t + 0.06) } catch { /* already stopped */ }
     onProgress(1)
   }
 

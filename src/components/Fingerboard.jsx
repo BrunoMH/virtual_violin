@@ -29,7 +29,6 @@ function stringX(stringIndex, y) {
 
 export default function Fingerboard({ onSelectNote }) {
   const nutXs = STRINGS.map((_, i) => stringX(i, NUT_Y))
-  const endXs = STRINGS.map((_, i) => stringX(i, FINGERBOARD_END_Y))
   const tailXs = STRINGS.map((_, i) => stringX(i, FINGERBOARD_END_Y))
 
   return (
